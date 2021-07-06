@@ -10,7 +10,7 @@ function Liste() {
 
     const fetchData  = async () => {
         const result = await axios(
-        "http://localhost/msprPharma/api/api.php", 
+        "https://www.montpellier-meilleur-ville.site/api/api/api.php", 
         )
         setData(result.data);
     }

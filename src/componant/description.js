@@ -10,7 +10,7 @@ function Description(){
   
       const fetchData  = async () => {
           const result = await axios(
-          "http://localhost/msprPharma/api/api.php", 
+          "https://www.montpellier-meilleur-ville.site/api/api/api.php", 
           )
           setData(result.data);
       }
@@ -39,10 +39,12 @@ function Description(){
                 <div key={key}>
                     <h1>{item.nom}</h1>
                     <h2>{item.description}</h2>
-                    <p>Taux de remise : <input value={item.remise}></input> </p>
-                    <p>Prix achat net : {item.achatNet} </p>
-                    <p>Prix de vente net : {item.achatNet * item.coeffMulti} </p>
-                    <p>Coefficient multiplicateur : {item.coeffMulti} </p>   
+                    <p>Taux de remise : {item.remise} </p>
+                    <p>Prix achat brut : {item.achatBrut} </p>
+                    <p>Prix achat net : {item.achatBrut *(1-item.remise)}</p>
+                    <p>Coefficient multiplicateur : {item.coeffMulti} </p>  
+                    <p>Prix de vente net : {item.achatBrut *(1-item.remise) * item.coeffMulti} </p>
+ 
                 </div>                 
             ))}
         </Fragment> 
