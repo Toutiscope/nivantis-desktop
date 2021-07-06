@@ -4,9 +4,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, to run the app on your browser, you can run:
 
 ### `npm start`
+
+To run the app on Electron window:
+
+### `npm run electron-dev`
+
+To create a file .exe, run:
+### `npm run dist`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

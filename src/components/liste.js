@@ -1,6 +1,14 @@
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { useState, useEffect, Fragment } from "react"
+import { useState, useEffect } from "react"
+import styled from "styled-components";
+
+const ListStyles = styled.div`
+li {
+  margin: 0.8em 0 0.8em 3em;
+  list-style: square;
+}
+`;
 
 function Liste() {
 
@@ -19,11 +27,13 @@ function Liste() {
 
 
   return (
-    <Fragment>
+    <ListStyles>
+      <ul>
       {data.map((item, key) => (
-        <p key={key}><Link to={"./description?id="+item.id}>{item.nom}</Link></p>
+        <li key={key}><Link to={"./description?id="+item.id}>{item.nom}</Link></li>
       ))}
-    </Fragment>
+      </ul>
+    </ListStyles>
 
   );
 }
